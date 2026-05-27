@@ -1,4 +1,4 @@
-## MCP Claude Tools Server (Remote HTTP Edition)
+## MCP Claude Tools Server (Remote HTTP)
 
 `mcp-claude-tools` adalah server **Model Context Protocol (MCP)** berperforma tinggi yang ditulis dalam bahasa Go (Golang). Server ini mengekspos perkakas (*tools*) manipulasi berkas dan eksekusi shell bawaan Claude Code melalui protokol HTTP berbasis JSON-RPC 2.0. 
 
@@ -13,7 +13,8 @@ Dengan server ini, klien MCP mana pun dapat memanggil fungsi sistem, mengelola b
 * **`bash_output`**: Mengambil aliran keluaran (`stdout`/`stderr`) dari proses latar belakang yang sedang berjalan berdasarkan ID tertentu.
 * **`kill_shell`**: Menghentikan paksa proses shell latar belakang yang tidak responsif atau sudah selesai.
 
-## 📁 Manipulasi Berkas (File Tools)
+## 📁 Berkas (File Tools)
+
 * **`baca`**: Membaca isi berkas teks dengan dukungan parameter `offset_lines` dan `limit_lines` untuk efisiensi memori token.
 * **`tulis`**: Menulis ulang atau membuat berkas baru langsung ke dalam penyimpanan disk.
 * **`sunting`**: Melakukan penggantian string/teks secara presisi (*exact match replacement*) di dalam berkas tanpa merusak struktur lain.
@@ -22,7 +23,7 @@ Dengan server ini, klien MCP mana pun dapat memanggil fungsi sistem, mengelola b
 
 ---
 
-## 🔒 Fitur Keamanan (Production Ready)
+## 🔒 Fitur
 
 * **Validasi Jalur (Anti-Directory Traversal):** Server menolak keras jalur relatif (`../`). Semua interaksi berkas divalidasi ketat agar tetap berada di bawah kendali direktori kerja utama (`BaseDir`).
 * **Proteksi Slowloris & Timeout HTTP:** Menggunakan `ReadHeaderTimeout` dan `IdleTimeout` pada server HTTP native Go untuk mencegah serangan penolakan layanan (DoS).
@@ -37,7 +38,7 @@ Dengan server ini, klien MCP mana pun dapat memanggil fungsi sistem, mengelola b
 * **Go** versi 1.21 ke atas.
 * **Ripgrep (`rg`)** terinstal di sistem Anda jika ingin menggunakan fitur pencarian teks mendalam (`grep`).
 
-## Instalasi & Menjalankan
+## Instalasi
 
 1. Klon repositori ini ke mesin lokal atau server remote Anda:
    ```
