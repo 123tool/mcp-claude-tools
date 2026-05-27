@@ -40,10 +40,9 @@ Dengan server ini, klien MCP mana pun dapat memanggil fungsi sistem, mengelola b
 ## Instalasi & Menjalankan
 
 1. Klon repositori ini ke mesin lokal atau server remote Anda:
-   ```bash
-   git clone [https://github.com/yourusername/mcp-claude-tools.git](https://github.com/yourusername/mcp-claude-tools.git)
-   cd mcp-claude-tools
    ```
+   git clone https://github.com/123tool/mcp-claude-tools.git
+   cd mcp-claude-tools
 2. Unduh dependency dan rapikan modul proyek :
    ```
    go mod tidy
@@ -53,8 +52,11 @@ Dengan server ini, klien MCP mana pun dapat memanggil fungsi sistem, mengelola b
 4. server akan berjalan pada alamat `http://localhost:8080/mcp` dan menjadikan direktori saat ini sebagai basis folder aman.
 
 ## Panduan Integrasi (Spesifikasi JSON-RPC 2.0)
+
 ​Klien MCP dapat berinteraksi dengan mengirimkan permintaan `HTTP POST` ke endpoint `/mcp`.
-​Contoh 1: Menjalankan Perintah Bash (Sinkron)
+
+**​Contoh 1 :**
+Menjalankan Perintah Bash (Sinkron)
 ​Request Payload :
 ```
 {
@@ -71,7 +73,7 @@ Dengan server ini, klien MCP mana pun dapat memanggil fungsi sistem, mengelola b
   "id": 101
 }
 ```
-Response Sukses :
+**Response Sukses :**
 ```
 {
   "jsonrpc": "2.0",
@@ -87,8 +89,8 @@ Response Sukses :
   "id": 101
 }
 ```
-Contoh 2: Menulis Berkas Baru (tulis)
-​Request Payload :
+**Contoh 2 :**
+Menulis Berkas Baru (tulis) ​Request Payload :
 ```
 {
   "jsonrpc": "2.0",
@@ -102,4 +104,3 @@ Contoh 2: Menulis Berkas Baru (tulis)
   },
   "id": 102
 }
-```
